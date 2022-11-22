@@ -10,7 +10,7 @@
   "author": "Jackson Yuan",
   "license": "ISC",
   "dependencies": {
-    "@aws-sdk/client-dynamodb": "^3.18.0",
+    "@aws-sdk/client-dynamodb": "^3.215.0",
     "@aws-sdk/util-dynamodb": "^3.18.0"
   },
   "devDependencies": {

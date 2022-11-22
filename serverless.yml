@@ -4,15 +4,24 @@ provider:
   name: aws
   runtime: nodejs14.x
   stage: dev
-  region: us-west-1
+  region: ap-southeast-2
   environment:
     DYNAMODB_TABLE_NAME: ${self:custom.postsTableName}
 
 custom:
   postsTableName: posts-table-${self:provider.stage}
+  dynamodb:
+    stages:
+      - dev
+    start:
+      migrate: true
+  serverless-offline:
+    resourceRoutes: true
 
 plugins:
   - serverless-iam-roles-per-function
+  - serverless-offline
+  - serverless-dynamodb-local
 
 functions:
   getPost:
